@@ -1,0 +1,49 @@
+sudo apt-get install tmux sl htop unity-tweak-tool build-essential fonts-hack-ttf numix-gtk-theme zsh ttf-ancient-fonts
+
+<<<<---------------------------------------------------->>>>
+
+For BulletTrain to work:
+export TERM="xterm-256color"
+
+<<<<---------------------------------------------------->>>>
+
+Oh My ZSH:
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+<<<<---------------------------------------------------->>>>
+
+Git Links:
+https://github.com/caiogondim/bullet-train.zsh
+https://github.com/source-foundry/Hack
+https://github.com/numixproject/numix-gtk-theme
+https://github.com/robbyrussell/oh-my-zsh
+
+https://www.sublimetext.com/docs/3/linux_repositories.html
+
+<<<<---------------------------------------------------->>>>
+
+Sublime Text install:
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+	sudo apt-get install apt-transport-https
+
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+	sudo apt-get update
+
+	sudo apt-get install sublime-text
+
+<<<<---------------------------------------------------->>>>
+
+https://github.com/daniruiz/Flat-Remix
+
+     sudo add-apt-repository ppa:noobslab/icons
+     sudo apt-get update
+     sudo apt-get install flat-remix-icons
+
+<<<<---------------------------------------------------->>>>
+
+For Files:
+.oh-my-zsh goes into ~
+sublime-text-3 goes into ~/.config
+.zshrc goes into ~

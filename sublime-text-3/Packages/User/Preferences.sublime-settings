@@ -1,0 +1,13 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"font_options": "gray_antialias",
+	"font_face": "Hack",
+	"font_size":12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_to_bracket": true
+}
