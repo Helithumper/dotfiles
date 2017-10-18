@@ -41,9 +41,19 @@ https://github.com/daniruiz/Flat-Remix
      sudo apt-get update
      sudo apt-get install flat-remix-icons
 
+
+or
+
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+
+	sudo add-apt-repository ppa:papirus/papirus
+	sudo apt-get update
+	sudo apt-get install papirus-icon-theme
+
 <<<<---------------------------------------------------->>>>
 
 For Files:
 .oh-my-zsh goes into ~
 sublime-text-3 goes into ~/.config
 .zshrc goes into ~
+
