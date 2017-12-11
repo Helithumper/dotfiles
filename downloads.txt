@@ -1,6 +1,15 @@
 sudo apt-get install tmux sl htop unity-tweak-tool build-essential fonts-hack-ttf numix-gtk-theme zsh ttf-ancient-fonts
 
+
+https://fonts.google.com/specimen/Roboto+Mono?selection.family=Roboto+Mono
 <<<<---------------------------------------------------->>>>
+
+Gogh
+
+wget -O gogh https://git.io/vQgMr && chmod +x gogh && ./gogh && rm gogh
+
+<<<<---------------------------------------------------->>>>
+
 
 For BulletTrain to work:
 export TERM="xterm-256color"
