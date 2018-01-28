@@ -36,11 +36,11 @@ Oh my ZSH adds some customization to the terminal. Here are instructions on how 
 
 1. Install ZSH
 ~~~bash
-$ sudo apt-get install zsh
+sudo apt-get install zsh
 ~~~
 2. Install Oh-My-ZSH
 ~~~bash
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ~~~
 
 ### Bullet Train
@@ -51,7 +51,7 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/m
 3. Configure the theme in your **~/.zshrc** file:
 
 ```bash
-$ ZSH_THEME="bullet-train"
+ZSH_THEME="bullet-train"
 ```
 
 ## Sublime
@@ -59,22 +59,22 @@ Sublime text is my editor of choice. Here are some installation instructions
 
 1. Install the GPG key:
 ~~~bash
-$ wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 ~~~
 
 2. Ensure apt is set up to work with https sources:
 ~~~bash
-$ sudo apt-get install apt-transport-https
+sudo apt-get install apt-transport-https
 ~~~
 3. Select the channel to use:
 
 Stable
 ~~~bash
-$ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 ~~~
 Dev
 ~~~bash
-$ echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 ~~~
 Update apt sources and install Sublime Text
 ~~~bash
@@ -84,9 +84,9 @@ sudo apt-get install sublime-text
 ## Icons
 I use the Numix Circles Icon pack. Installation is very easy!
 ~~~bash
-$ sudo add-apt-repository ppa:numix/ppa
-$ sudo apt-get update
-$ sudo apt-get install numix-icon-theme-circle
+sudo add-apt-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-icon-theme-circle
 ~~~
 ## Themes
 I use the Flatabulous theme. 
