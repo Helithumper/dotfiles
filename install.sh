@@ -5,12 +5,13 @@ sudo apt-get update
 
 sudo apt-get upgrade -y
 
-sudo apt-get install -y vim tmux zsh cmus gdb gcc build-essential htop ranger vlc steam openvpn-client bless filezilla hexchat wireshark openjdk-9-jdk python-pip python-dev
+sudo apt-get install -y vim tmux zsh cmus gdb gcc build-essential htop ranger vlc steam openvpn bless filezilla hexchat wireshark python-pip python-dev
 
 sudo pip install --upgrade pip 
 sudo pip install --upgrade virtualenv 
 sudo pip install rainbowstream
 
+wget https://ctf.hackucf.org/ctf_vm_setup.sh && bash ctf_vm_setup.sh
 
 # Download Sublime Text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
