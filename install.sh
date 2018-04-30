@@ -5,7 +5,12 @@ sudo apt-get update
 
 sudo apt-get upgrade -y
 
-sudo apt-get install -y vim tmux zsh cmus gdb gcc build-essential htop ranger vlc steam openvpn-client bless filezilla hexchat wireshark
+sudo apt-get install -y vim tmux zsh cmus gdb gcc build-essential htop ranger vlc steam openvpn-client bless filezilla hexchat wireshark openjdk-9-jdk python-pip python-dev
+
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
+sudo pip install rainbowstream
+
 
 # Download Sublime Text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -57,6 +62,15 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 mkdir ~/.vim/colors
 wget https://raw.githubusercontent.com/dracula/vim/master/colors/dracula.vim -P ~/.vim/colors
 
+# Install Peppermint via Gogh
+wget -O xt  http://git.io/v3DBK && chmod +x xt && ./xt && rm xt
+
+# Symlink the dotfiles
+ln -s ./.zshrc ~/.zshrc
+ln -s ./.tmux.conf ~/.tmux.conf
+ln -s ./.vimrc ~/.vimrc
+ln -s ./rainbow_config ~/.rainbow_config
+ln -s ./.aliases ~/.aliases
 
 echo "Done-Press enter"
 read

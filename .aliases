@@ -1,0 +1,40 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+function printred () {
+  printf "${RED}$@\n${NC}"
+}
+
+# git
+alias gs="printred \"git status\"; git status "
+alias ga="printred \"git add --all\"; git add --all "
+alias gc="printred \"git commit -a\"; git commit -a "
+alias gcm="printred \"git commit -am\"; git commit -am "
+alias gacm="ga; gcm "
+alias gpl="printred \"git pull\"; git pull"
+alias gf="printred \"git fetch\"; git fetch"
+alias gp="printred \"git push\"; git push"
+
+function gacmp () {
+  ga
+
+  printred "git commit"
+  git commit -am "$@"
+
+  gp
+  gs
+}
+
+# cd
+alias cl="clear"
+alias cdd="cd ~/Projects/dotfiles/"
+
+function cdl () {
+  cd "$@" && l
+}
+
+# others
+alias v="vim"
+alias r="ranger"
