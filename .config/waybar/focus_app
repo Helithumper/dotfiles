@@ -1,0 +1,24 @@
+#!/bin/sh
+
+case $1 in
+-l)
+  condition="$2"
+  swaymsg [con_id=$((swaymsg -t get_tree | jq -r '.nodes[1].nodes[].floating_nodes[] | select(.name != null and '"$condition"') | "\(.id?) \u001F \(.name?)"'; swaymsg -t get_tree | jq -r '.nodes[1].nodes[].nodes[] | select(.name != null and '"$condition"') | "\(.id?) \u001F \(.name?)"') | column -t -s"$(echo -e '\u001F')" -o'|' | sort -n | bemenu -bnip 'Which?' -l 10 | sed 's/ |.*//g')] focus
+  exit
+  ;;
+esac
+
+app="$1"
+condition="$2"
+
+windows=$((swaymsg -t get_tree | jq -r '.nodes[1].nodes[].nodes[] | select(.name != null and '"$condition"') | "\(.id?) \u001F \(.name?)"'; swaymsg -t get_tree | jq -r '.nodes[1].nodes[].floating_nodes[] | select(.name != null and '"$condition"') | "\(.id?) \u001F \(.name?)"') | column -t -s"$(echo -e '\u001F')" -o'|' | sort -n)
+
+if test -z "$(echo "$windows"|grep '|')"
+then
+  $app
+elif test $(echo "$windows"|wc -l) -eq 1
+then
+  swaymsg [con_id=$(echo "$windows" | sed 's/ |.*//g;')] focus
+else
+  swaymsg [con_id=$(echo "$windows" | bemenu -bnip 'Which?' -l 10 | sed 's/ |.*//g')] focus
+fi

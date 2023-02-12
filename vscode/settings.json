@@ -1,0 +1,58 @@
+{
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "material-icon-theme.showWelcomeMessage": false,
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": ""
+        }
+    ],
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontFamily": "Fantasque Sans Mono",
+    "editor.fontSize": 13,
+    "editor.minimap.enabled": false,
+    "python.pipenvPath": "/Users/pdd/Library/Python/3.8/bin/pipenv",
+    "python.poetryPath": "/Users/pdd/Library/Python/3.8/bin/poetry",
+    "python.condaPath": "/Users/pdd/Library/Python/3.8/bin/conda",
+    "python.linting.enabled": true,
+    "python.linting.banditPath": "/Users/pdd/Library/Python/3.8/bin/bandit",
+    "python.linting.banditEnabled": true,
+    "python.linting.pylintPath": "/Users/pdd/Library/Python/3.8/bin/pylint",
+    "python.linting.mypyPath": "/Users/pdd/Library/Python/3.8/bin/mypy",
+    "python.linting.flake8Path": "/Users/pdd/Library/Python/3.8/bin/flake8",
+    "python.formatting.blackPath": "/Users/pdd/Library/Python/3.8/bin/black",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticMode": "workspace",
+    "editor.formatOnSave": true,
+    "python.linting.lintOnSave": true,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.formatOnSave": true,
+    },
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "bracketPairColorizer.depreciation-notice": false,
+    "workbench.activityBar.visible": false,
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "redhat.telemetry.enabled": true,
+    "update.mode": "start",
+    "go.toolsManagement.autoUpdate": true,
+    "[css]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    }
+}

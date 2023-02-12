@@ -1,0 +1,84 @@
+{
+  //"layer": "top", // Waybar at top layer
+  //"position": "top", // Waybar position (top|bottom|left|right)
+  //"height": 20, // Waybar height (to be removed for auto height)
+  //"width": 1280, // Waybar width
+  // Choose the order of the modules
+  "modules-left": ["custom/poweroff", "battery", "memory", "cpu"],
+  "modules-center": ["sway/workspaces"],
+  "modules-right": ["tray", "custom/lang", "pulseaudio", "network", "clock"],
+  "custom/poweroff": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "echo -e 'Shutdown\nReboot\nSleep\nHibernate\nExit' | bemenu -nip 'Done?' -l 10 | sed 's/Shutdown/systemctl poweroff/g;s/Reboot/systemctl reboot/g;s/Sleep/systemctl suspend/g;s/Hibernate/systemctl hibernate/g;s/Exit/swaymsg exit/g' | xargs -r0 sh -c"
+  },
+  "memory": {
+    "format": "{}% ",
+    "interval": 10,
+    "states": {
+      "warn": 70
+    }
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "states": {
+        "warn": 80
+    }
+  },
+  "tray": {
+    "icon-size": 22,
+    "spacing": 10
+  },
+  "custom/lang": {
+    "tooltip": false,
+    "exec": "layout -p",
+    "interval": "once",
+    "signal": 10,
+    "on-click": "layout -s"
+  },
+  "pulseaudio": {
+    "on-scroll-up": "pamixer --allow-boost -i 5",
+    "on-scroll-down": "pamixer --allow-boost -d 5",
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": "{volume}%  {icon}",
+    "format-muted": "{volume}% ",
+    "format-source-muted": "{volume}% ",
+    "on-click": "pactl set-sink-mute 0 toggle",
+    "on-click-right": "pavucontrol",
+    "format-icons": {
+      "default": ["", "", "", "", ""]
+    }
+  },
+  "network": {
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    // "interface": "wlan0", // (Optional) To force the use of this interface
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-linked": "(No IP) ",
+    "format-disconnected": "",
+    "interval": 5,
+    "signal": 1,
+    "on-click": "kitty --class nmtui-connect nmtui-connect",
+    "on-click-right": "nm-connection-editor"
+  },
+  "battery": {
+    "interval": 2,
+    "states": {
+        "warning": 15,
+        "critical": 5
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "clock": {
+    "format": "{:%a %b %d %H:%M}",
+    "today-format": "<b>{}</b>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y/%m/%d}"
+  }
+}
