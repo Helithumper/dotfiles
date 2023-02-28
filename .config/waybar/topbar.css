@@ -1,0 +1,136 @@
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: SF Pro Display, "Font Awesome 5 Free", sans-serif;
+  font-size: 14px;
+  min-height: 0;
+}
+
+tooltip {
+  color: black;
+  background-color: white;
+  text-shadow: none;
+  border: solid 1px #000;
+  border-radius: 3px;
+}
+
+tooltip * {
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+  text-shadow: none;
+  padding: 200px;
+}
+
+window#waybar {
+  /*background-color: transparent;*/
+  border-bottom: none;
+  color: #000000;
+  transition-property: background-color;
+  transition-duration: 0s;
+}
+
+.modules-left > widget > label,
+.modules-right > widget > label {
+  color: #000000;
+  background: #ffffff;
+  background-color: white;
+  margin: 0px 0px 2px 0px;
+  padding: 0px 6px;
+}
+
+#tray {
+  color: #000000;
+  background: #676767;
+  margin: 0px 0px 2px 0px;
+  /*padding: 0px 6px;*/
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.modules-right > widget:nth-child(2) > label {
+  border-bottom-left-radius: 3px;
+  margin-left: 40px;
+}
+
+.modules-left > widget:last-child > label {
+  border-bottom-right-radius: 3px;
+  margin-right: 40px;
+}
+
+#memory.warn {
+  background-color: #f5db3c;
+  color: #000;
+}
+
+#cpu.warn {
+  background-color: #f53c3c;
+  color: #fff;
+}
+
+#workspaces {
+  padding: 0px 6px;
+  margin-bottom: 2px;
+}
+
+#workspaces button:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+#workspaces button:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+#workspaces button {
+  padding: 0px 8px;
+  background: #ffffff;
+  font-weight: 500;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  background: #477083;
+  color: #ffffff;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#workspaces button.focused {
+  border-bottom: 2px solid #477083;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+  color: #fff;
+}
+
+#battery {
+  padding: 0.25rem 0.3rem;
+}
+
+#pulseaudio.muted {
+  background-color: #555;
+  color: #fff;
+}
+
+#network.disconnected {
+  color: #c42f2f;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #000000;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}

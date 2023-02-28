@@ -1,0 +1,31 @@
+* {
+  border: none;
+  border-radius: 0;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: SF Pro Display, "Font Awesome 5 Free", sans-serif;
+  font-size: 24px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+  border-bottom: none;
+  color: #000000;
+  transition-property: background-color;
+  transition-duration: 0s;
+}
+
+.modules-center widget label {
+  color: #000000;
+  background: #ffffff;
+  padding: 0.4rem 0.6rem;
+  margin: 2px 0px 0px 0px;
+}
+
+.modules-center widget:first-child label {
+  border-top-left-radius: 3px;
+}
+
+.modules-center widget:last-child label {
+  border-top-right-radius: 3px;
+}

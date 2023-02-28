@@ -1,0 +1,51 @@
+{
+  // "layer": "top", // Waybar at top layer
+  //"position": "bottom", // Waybar position (top|bottom|left|right)
+  // "height": 20, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  // "modules-left": [],
+  "modules-center": ["custom/ff", "custom/term", "custom/fm", "custom/ed", "custom/gimp", "custom/tg"],
+  // "modules-right": [],
+  "custom/ff": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "/home/peyton/.config/waybar/focus_app firefox '.window_properties.class == \"firefox\"'",
+    "on-click-middle": "firefox",
+    "on-click-right": "~/lib/cfg/waybar/focus_app -l '.window_properties.class == \"firefox\"'"
+  },
+  "custom/term": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "kitty",
+    "on-click-middle": "kitty",
+    "on-click-right": "~/lib/cfg/waybar/focus_app -l '.app_id == \"kitty\"'"
+  },
+  "custom/fm": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/lib/cfg/waybar/focus_app pcmanfm '.window_properties.class == \"Pcmanfm\"'",
+    "on-click-middle": "pcmanfm",
+    "on-click-right": "~/lib/cfg/waybar/focus_app -l '.window_properties.class == \"Pcmanfm\"'"
+  },
+  "custom/ed": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/lib/cfg/waybar/focus_app howl '.app_id == \"howl\"'",
+    "on-click-middle": "howl",
+    "on-click-right": "~/lib/cfg/waybar/focus_app -l '.app_id == \"howl\"'"
+  },
+  "custom/gimp": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "gimp",
+    "on-click-middle": "gimp",
+    "on-click-right": "gimp"
+  },
+  "custom/tg": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "telegram-desktop",
+    "on-click-middle": "telegram-desktop",
+    "on-click-right": "telegram-desktop"
+  }
+}
