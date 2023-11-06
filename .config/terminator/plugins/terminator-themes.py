@@ -26,23 +26,23 @@ class TerminatorThemes(plugin.Plugin):
     def configure(self, widget, data = None):
         ui = {}
         dbox = Gtk.Dialog( _("Terminator themes"), None, Gtk.DialogFlags.MODAL)
-        
+
         headers = { "Accept": "application/vnd.github.v3.raw" }
         response = requests.get(self.base_url, headers=headers)
 
         if response.status_code != 200:
             gerr(_("Failed to get list of available themes"))
             return
-        
+
         self.themes_from_repo = response.json()["themes"]
         self.profiles = self.terminal.config.list_profiles()
 
         main_container = Gtk.HBox(spacing=5)
         main_container.pack_start(self._create_themes_grid(ui), True, True, 0) #Left column
         main_container.pack_start(self._create_settings_grid(ui), True, True, 0) #Right column
-       
+
         dbox.vbox.pack_start(main_container, True, True, 0)
-        
+
         self.dbox = dbox
         dbox.show_all()
         res = dbox.run()
@@ -85,7 +85,7 @@ class TerminatorThemes(plugin.Plugin):
         combo.set_active(0)
 
         search_entry = Gtk.SearchEntry(max_width_chars=30)
-        search_entry.connect("search-changed", self.on_theme_search_changed, ui)    
+        search_entry.connect("search-changed", self.on_theme_search_changed, ui)
 
         return [combo,search_entry]
 
@@ -103,7 +103,7 @@ class TerminatorThemes(plugin.Plugin):
         self.filter_type = "theme_type"
         self.theme_filter = profiles_list_model.filter_new()
         self.theme_filter.set_visible_func(self.theme_filter_func)
-        
+
         treeview = Gtk.TreeView.new_with_model(self.theme_filter)
 
         selection = treeview.get_selection()
@@ -142,7 +142,7 @@ class TerminatorThemes(plugin.Plugin):
         check.set_active(True)
         check.connect("toggled", self.on_inheritsfromdefaultcheck_toggled, ui)
         ui['check_inherits_from_default'] = check
-        
+
         return check
 
     def _create_inherits_from_combo(self, ui):
@@ -158,10 +158,10 @@ class TerminatorThemes(plugin.Plugin):
         combo.set_active(self.profiles.index(self.terminal.config.get_profile())) #set current terminal profile as current item
 
         return combo
-    
+
     def _create_main_action_button(self, ui, label, action):
         btn = Gtk.Button(_(label.capitalize()))
-        btn.connect("clicked", action, ui) 
+        btn.connect("clicked", action, ui)
         btn.set_sensitive(False)
         ui['button_' + label] = btn
 
@@ -207,9 +207,9 @@ class TerminatorThemes(plugin.Plugin):
         else:
             data["inherits_from_combo"].set_sensitive(False)
             self.inherits_config_from = 'default'
-        
+
     def  on_inheritsfromcombo_changed(self, combo, data):
-        if combo.get_sensitive():    
+        if combo.get_sensitive():
             self.inherits_config_from = self.profiles[combo.get_active()]
         else:
             self.inherits_config_from = 'default'
@@ -246,11 +246,11 @@ class TerminatorThemes(plugin.Plugin):
         target = store[iter][3]
         widget = self.terminal.get_vte()
         treeview.set_enable_tree_lines(False)
-        
+
         if not iter:
             return
 
-        self.terminal.config.add_profile(target["name"]) 
+        self.terminal.config.add_profile(target["name"])
         template_data = self.config_base.profiles[self.inherits_config_from].copy()
 
         for k, v in target.items():
@@ -262,7 +262,7 @@ class TerminatorThemes(plugin.Plugin):
 
         for k, v in template_data.items():
             self.config_base.set_item(k, v, target["name"])
-                 
+
         self.terminal.force_set_profile(widget, target["name"])
         self.terminal.config.save()
         self.update_comboInheritsFrom(data)
@@ -309,8 +309,8 @@ class ThemePreview(Gtk.VBox):
             area.set_size_request(20, 25)
             color_preview = Gtk.VBox()
             color_preview.pack_start(area, False,False,0)
-            color_preview.modify_bg(0, color = Gdk.color_parse(color)) 
-           
+            color_preview.modify_bg(0, color = Gdk.color_parse(color))
+
             self.palette_preview_colors.append(color_preview)
 
             palette_preview.add(color_preview)
@@ -339,16 +339,16 @@ class ThemePreview(Gtk.VBox):
         return area
 
     def update_preview(self, new_theme):
-        self.modify_bg(0, color = Gdk.color_parse(new_theme['background_color'])) 
+        self.modify_bg(0, color = Gdk.color_parse(new_theme['background_color']))
         self.update_palette_preview(new_theme['palette'])
         self.update_prompt_line_colors(new_theme['palette'])
- 
+
     def update_palette_preview(self, palette):
         for i,color in enumerate(palette.split(":")[0:8]):
-            self.palette_preview_colors[i].modify_bg(0,color = Gdk.color_parse(color)) 
-            
+            self.palette_preview_colors[i].modify_bg(0,color = Gdk.color_parse(color))
+
     def update_prompt_line_colors(self, palette):
         palette = palette.split(":")
-        self.prompt_line["prompt"].modify_fg(0,color = Gdk.color_parse(palette[6])) 
-        self.prompt_line["cmd"].modify_fg(0,color = Gdk.color_parse(palette[3])) 
-        self.prompt_line["arg"].modify_fg(0,color = Gdk.color_parse(palette[2])) 
+        self.prompt_line["prompt"].modify_fg(0,color = Gdk.color_parse(palette[6]))
+        self.prompt_line["cmd"].modify_fg(0,color = Gdk.color_parse(palette[3]))
+        self.prompt_line["arg"].modify_fg(0,color = Gdk.color_parse(palette[2]))

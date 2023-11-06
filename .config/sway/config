@@ -95,8 +95,8 @@ font pango:Cantarell 14px
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg ~/.config/wallpapers/yuru.png fill 
-output * bg `~/.config/bin/wallpaper` fill 
+#output * bg ~/.config/wallpapers/yuru.png fill
+output * bg `~/.config/bin/wallpaper` fill
 output * scale 1.25
 output * subpixel none
 
@@ -202,7 +202,7 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     bindsym $mod+Ctrl+p exec grim - | wl-copy -t image/png
 
     # Screenshots with Swappy
-    bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | swappy -f -  
+    bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | swappy -f -
 
     bindsym Mod1+l exec $lock
 #
@@ -396,7 +396,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SO
 bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
-bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10 
+bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
 
 
 

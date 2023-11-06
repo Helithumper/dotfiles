@@ -101,7 +101,7 @@ debug:
 #       # background: '0xfbf1c7' # normal
 #       # soft contrast: background = '0xf2e5bc'
 #       foreground: '0x3c3836'
-  
+
 #     # Normal colors
 #     normal:
 #       black:   '0xfbf1c7'
@@ -112,7 +112,7 @@ debug:
 #       magenta: '0xb16286'
 #       cyan:    '0x689d6a'
 #       white:   '0x7c6f64'
-  
+
 #     # Bright colors
 #     bright:
 #       black:   '0x928374'
@@ -406,7 +406,7 @@ key_bindings:
   - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
-  - { key: D,        mods: Command,       chars: "\x06\x76" } 
+  - { key: D,        mods: Command,       chars: "\x06\x76" }
   - { key: D,        mods: Command|Shift, chars: "\x06\x73" }
   - { key: W,        mods: Command,       chars: "\x06\x78" }
   - { key: H,        mods: Command,       chars: "\x06\x68" }

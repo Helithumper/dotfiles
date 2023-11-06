@@ -14,7 +14,7 @@ change_color() {
 	sed -i -e "s/primary = #.*/primary = $AC/g" $PFILE
 	sed -i -e 's/secondary = #.*/secondary = #E53935/g' $PFILE
 	sed -i -e 's/alternate = #.*/alternate = #7cb342/g' $PFILE
-	
+
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */
@@ -28,7 +28,7 @@ change_color() {
 	  ac:   ${AC}FF;
 	}
 	EOF
-	
+
 	polybar-msg cmd restart
 }
 

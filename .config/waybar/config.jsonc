@@ -1,5 +1,5 @@
 {
-    "position": "bottom", 
+    "position": "bottom",
     "modules-left": ["sway/workspaces", "mpd"],
     "modules-right": ["network", "pulseaudio", "battery", "custom/date", "clock"],
     // Modules configuration
@@ -88,4 +88,3 @@
             }
         }
 }
-

@@ -89,9 +89,9 @@ knownrm() {
 export PATH=$PATH:~/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:/Users/pdd/Library/Python/3.8/bin
-export PYENV_ROOT="$HOME/.pyenv" 
-export PATH="$PYENV_ROOT/bin:$PATH" 
-eval "$(pyenv init --path)" 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 export ARCHFLAGS='-arch arm64'
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"

@@ -9,4 +9,3 @@ walls = list()
 for source in args:
     walls += glob.glob("/home/pdd/.config/wallpapers/" + source + "/*.*")
 print(random.choice(walls))
-

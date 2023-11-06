@@ -8,7 +8,7 @@ change_panel() {
 
 	# Change wallpaper
 	feh --bg-fill "$DIR"/wallpapers/"$bg"
-	
+
 	# Restarting polybar
 	polybar-msg cmd restart
 }

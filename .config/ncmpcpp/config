@@ -17,7 +17,7 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 
 ##### connection settings #####
 
-mpd_host = ~/.mpd/socket 
+mpd_host = ~/.mpd/socket
 
 #mpd_port = 6600
 
@@ -588,4 +588,3 @@ statusbar_time_color = 9:b
 #window_border_color = green
 
 #active_window_border = red
-

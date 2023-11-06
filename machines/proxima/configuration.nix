@@ -30,7 +30,7 @@
   networking.networkmanager.enable = true;
 
   #https://nixos.wiki/wiki/I3
-  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   # Enable the GNOME Desktop Environment.
   services.xserver = {
@@ -251,7 +251,7 @@
       "/var/lib/docker"
       "/var/lib/systemd"
       "/var/lib/libvirt"
-      
+
       # temporary files created by cargo and `go build`
       "**/target"
       "/home/*/go/bin"

@@ -19,7 +19,7 @@ change_color() {
 	sed -i -e "s/primary = #.*/primary = $AC/g" $PFILE
 	sed -i -e "s/secondary = #.*/secondary = $SC/g" $PFILE
 	sed -i -e "s/alternate = #.*/alternate = $AL/g" $PFILE
-	
+
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */
@@ -44,7 +44,7 @@ hex_to_rgb() {
 
 get_fg_color(){
     INTENSITY=$(calc "$R*0.299 + $G*0.587 + $B*0.114")
-    
+
     if [ $(echo "$INTENSITY>186" | bc) -eq 1 ]; then
         MF="#202020"
     else

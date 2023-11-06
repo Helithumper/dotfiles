@@ -16,7 +16,7 @@ change_color() {
 	sed -i -e "s/fg = #.*/fg = ${FG}/g" $PFILE
 	sed -i -e "s/fga = #.*/fga = ${RFG}/g" $PFILE
 	sed -i -e "s/ac = #.*/ac = ${AC}/g" $PFILE
-	
+
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */

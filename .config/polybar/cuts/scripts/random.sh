@@ -12,7 +12,7 @@ change_color() {
 	sed -i -e "s/foreground = #.*/foreground = #${FG}/g" $PFILE
 	sed -i -e "s/foreground-alt = #.*/foreground-alt = #33${FG}/g" $PFILE
 	sed -i -e "s/primary = #.*/primary = $AC/g" $PFILE
-	
+
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */
@@ -26,7 +26,7 @@ change_color() {
 	  se:   ${AC}1A;
 	}
 	EOF
-	
+
 	polybar-msg cmd restart
 }
 
@@ -71,7 +71,7 @@ hex_to_rgb() {
 
 get_fg_color(){
     INTENSITY=$(calc "$R*0.299 + $G*0.587 + $B*0.114")
-    
+
     if [ $(echo "$INTENSITY>186" | bc) -eq 1 ]; then
         FG="0a0a0a"
         AC="#0a0a0a"

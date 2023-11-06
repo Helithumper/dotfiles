@@ -22,4 +22,3 @@ entry {
     expand: 				true;
     text-color:				@ac;
 }
-

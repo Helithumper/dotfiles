@@ -41,8 +41,8 @@ Plugin 'Townk/vim-autoclose'
 Plugin 'majutsushi/tagbar'
 Plugin 'luochen1990/rainbow'
 
-Plugin 'fatih/vim-go' 
-Plugin 'godoctor/godoctor.vim' 
+Plugin 'fatih/vim-go'
+Plugin 'godoctor/godoctor.vim'
 
 Plugin 'Shougo/deoplete.nvim'
 " Plugin 'zchee/deoplete-go'
@@ -75,7 +75,7 @@ call vundle#end()
 filetype plugin indent on  " allows auto-indenting depending on file type
 
 syntax on
-colorscheme moonfly 
+colorscheme moonfly
 set background=dark
 
 let g:airline_powerline_fonts = 1

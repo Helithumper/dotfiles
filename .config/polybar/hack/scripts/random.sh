@@ -10,7 +10,7 @@ change_color() {
 	sed -i -e "s/background = #.*/background = $BG/g" $PFILE
 	sed -i -e "s/foreground = #.*/foreground = $FG/g" $PFILE
 	sed -i -e "s/primary = #.*/primary = $AC/g" $PFILE
-	
+
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */
@@ -23,7 +23,7 @@ change_color() {
 	  fg:    #FFFFFFFF;
 	}
 	EOF
-	
+
 	polybar-msg cmd restart
 }
 
@@ -68,7 +68,7 @@ hex_to_rgb() {
 
 get_fg_color(){
     INTENSITY=$(calc "$R*0.299 + $G*0.587 + $B*0.114")
-    
+
     if [ $(echo "$INTENSITY>186" | bc) -eq 1 ]; then
         FG="#0a0a0a"
     else

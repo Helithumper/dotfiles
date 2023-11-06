@@ -19,7 +19,7 @@ change_color() {
 	sed -i -e "s/primary = #.*/primary = $AC/g" $PFILE
 	sed -i -e 's/red = #.*/red = #B71C1C/g' $PFILE
 	sed -i -e 's/yellow = #.*/yellow = #F57F17/g' $PFILE
-	
+
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */

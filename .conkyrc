@@ -60,4 +60,3 @@ conky.text = [[
   ${goto 20}${top name 5} ${goto 180}${top pid 5}${goto 235}${top cpu 5}${goto 290}${top mem 5}
 
 ]];
-
