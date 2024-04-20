@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 print_help() {
     echo "Usage: wallpaper-changer.sh [-p PATH] [-i INTERVAL] [-h|--help]"
